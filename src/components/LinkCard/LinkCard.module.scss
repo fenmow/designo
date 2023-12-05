@@ -1,0 +1,54 @@
+.link_card {
+  position: relative;
+  border-radius: 12px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #ffff;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  &:before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: 12px;
+    background-color: rgba(28, 27, 27, 0.513);
+    z-index: 90 !important;
+    transition: .2s;
+  }
+  &:hover:before {
+    background-color: #e7826baf;
+  }
+  .title {
+    font-weight: 400;
+    font-size: 2.3em;
+    z-index: 100;
+    user-select: none;
+  }
+  .link {
+    font-size: 14px;
+    letter-spacing: .25em;
+    padding: 10px !important;
+    color: #ffff;
+    text-decoration: none;
+    z-index: 100;
+    span {
+      padding-left: 7px !important;
+      color: #F27D72;
+    }
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .link_card {
+    .title {
+      padding: 10px !important;
+    }
+  }
+}

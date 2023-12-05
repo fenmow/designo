@@ -1,0 +1,87 @@
+.main_card {
+  position: relative;
+  background-color: #F27D72;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 7rem 5.5rem;
+  color: #ffff;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  border-radius: .8em;
+  overflow: hidden;
+  font-family: 'Jost', sans-serif;
+  .info_Side {
+    h1 {
+      font-size: 2.8em;
+      font-weight: 400;
+      line-height: .99em;
+    }
+    p {
+      margin: 34px 0;
+      max-width: 420px;
+      line-height: 1.5em;
+    }
+    button {
+      border: none;
+      padding: 1em 1.7em;
+      border-radius: 8px;
+      text-transform: uppercase;
+      font-family: 'Jost', sans-serif;
+      font-size: 15px;
+      letter-spacing: .12rem;
+      transition: .2s;
+      cursor: pointer;
+      &:hover {
+        background-color: #FFAD9B;
+        color: #ffff;
+      }
+    }
+  }
+  .background_image {
+    position: absolute;
+    right: 0;
+  }
+  .image_Side {
+    position: relative;
+    .image {
+      position: absolute;
+      right: -125px;
+      top: -145px;
+      width: 575px;
+      height: 780px;
+    }
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .main_card {
+    grid-template-columns: repeat(1, 1fr);
+    text-align: center;
+    padding-bottom: 24em;
+    .info_Side {
+      z-index: 100;
+      p {
+        margin: 34px 0;
+        max-width: 100%;
+        line-height: 1.5em;
+      }
+    }
+    .background_image {
+      position: absolute;
+      right: -60px;
+      top: 20%;
+      z-index: 50;
+    }
+    .image_Side {
+      .image {
+        position: absolute;
+        right: 50%;
+        transform: translateX(50%);
+        top: -85px;
+        width: 575px;
+        height: 780px;
+      }
+    }
+  }
+}

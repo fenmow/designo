@@ -1,0 +1,123 @@
+.contact_card_container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.75em !important;
+  margin-bottom: 100px;
+  transform: translateY(175px);
+  .contact_card {
+    position: relative;
+    border-radius: 12px;
+    width: 100%;
+    padding: 3.5em 5.5em;
+    background-color: #E7816B;
+    color: #ffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    h1 {
+      font-size: 2.38em;
+      font-weight: normal;
+      line-height: .9em;
+    }
+    p {
+      width: 100%;
+      max-width: 500px;
+      margin: 20px 0;
+    }
+    button {
+      border: none;
+      padding: 1em 1.7em;
+      border-radius: 8px;
+      text-transform: uppercase;
+      font-family: 'Jost', sans-serif;
+      font-size: 15px;
+      letter-spacing: .12rem;
+      transition: .2s;
+      cursor: pointer;
+      &:hover {
+        background-color: #FFAD9B;
+        color: #ffff;
+      }
+    }
+  }
+}
+
+.footer_container {
+  width: 100%;
+  background-color: #1D1C1E;
+  padding: 9rem 0 3rem 0;
+  .footer {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.75em;
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5em 0;
+      border-bottom: 1px solid #979797;
+      .nav_bar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1.75rem;
+        .nav_link {
+          position: relative;
+          text-transform: uppercase;
+          text-decoration: none;
+          font-family: 'Jost', sans-serif;
+          letter-spacing: 1px;
+          font-size: 15px;
+          color: #ffff;
+          &::before {
+            position: absolute;
+            content: "";
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: .1rem;
+            background-color: #F27D72;
+            transition: .3s;
+          }
+          &:hover::before {
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    .info_links {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      padding: 2rem 0;
+      .footer_info {
+        display: flex;
+        gap: 11em;
+        .info_location, .info_contact {
+          display: flex;
+          flex-direction: column;
+          color: #ffff;
+        }
+        .info_location {
+          .location_title {
+            font-weight: bold;
+          }
+        }
+        .info_contact {
+          font-weight: bold;
+        }
+      }
+      .footer_links {
+        display: flex;
+        align-items: end;
+        gap: 1.1rem;
+        a {
+          height: 24px;
+        }
+      }
+    }
+  }
+}
