@@ -21,7 +21,7 @@ const Home: NextPage = () => {
       <MainCard />
       <section className={Style.link_section}>
         <LinkCard cardTitle="web design" cardImage={WebDesignImage.src} cardLink="/webdesign" />
-        <LinkCard cardTitle="app design" cardImage={AppDesignImage.src} cardLink="/webdesign"/>
+        <LinkCard cardTitle="app design" cardImage={AppDesignImage.src} cardLink="/appdesign"/>
         <LinkCard cardTitle="graphics design" cardImage={GraphicDesignImage.src} cardLink="/graphicdesign" />
       </section>
       <section className={Style.image_section}>

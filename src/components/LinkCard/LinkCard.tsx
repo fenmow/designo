@@ -1,5 +1,4 @@
 import Link from "next/link"
-import { FaChevronRight } from "react-icons/fa";
 import Style from "./LinkCard.module.scss"
 
 type LinkCardProps = {

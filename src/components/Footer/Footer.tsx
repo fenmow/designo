@@ -2,11 +2,14 @@ import Link from "next/link"
 import Style from "./Footer.module.scss"
 import Image from "next/image"
 import Logo from "public/logo-light.png"
+import { usePathname } from "next/navigation"
 
 const Footer: React.FC = () => {
+  const pathname = usePathname()
+
   return (
     <>
-      <section className={Style.contact_card_container}>
+      { pathname !== '/contact' ? (<section className={Style.contact_card_container}>
         <div className={Style.contact_card}>
           <div className={Style.text_content}>
             <h1>Let´s talk about<br></br> your project</h1>
@@ -16,8 +19,8 @@ const Footer: React.FC = () => {
             <button>get in touch</button>
           </Link>
         </div>
-      </section>
-      <footer className={Style.footer_container}>
+      </section>) : null }
+      <footer className={`${Style.footer_container} ${pathname === '/contact' ? `${Style.footer_container_contact}` : ''}`}>
         <div className={Style.footer}>
           <div className={Style.navbar}>
             <div className={Style.logo_container}>
@@ -26,7 +29,7 @@ const Footer: React.FC = () => {
             </Link>
             </div>
             <nav className={Style.nav_bar}>
-            <Link href="/company" legacyBehavior>
+            <Link href="/about" legacyBehavior>
               <a className={Style.nav_link}>our company</a>
             </Link>
             <Link href="/locations" legacyBehavior>

@@ -1,0 +1,67 @@
+.contact_card {
+  width: 100%;
+  margin: 1em 0;
+  background-color: #F27D72;
+  color: #ffff;
+  border-radius: .8em;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  background-repeat: no-repeat;
+  background-position: bottom left;
+  margin-bottom: 11em;
+  .text_content {
+    padding: 8em 5em;
+    overflow: visible;
+    h1 {
+      text-transform: capitalize;
+      font-weight: normal;
+      font-size: 2.75em;
+    }
+    p {
+      margin: 20px 0 0 0;
+      line-height: 1.6em;
+    }
+  }
+
+  .contact_form {
+    display: flex;
+    flex-direction: column;
+    padding: 2.5rem 5rem 2.5rem 2.5rem;
+    input, textarea {
+      background-color: transparent;
+      width: 100% !important;
+      border: none;
+      outline: none;
+      border-bottom: 2px solid #ffffff9d;
+      padding: 16px;
+      margin: 5px 0;
+      color: #ffff;
+      resize: none;
+      font-size: 16px;
+      &::placeholder {
+        color: #ffffff9b;
+        font-size: 16px;
+      }
+      &:focus {
+        border-bottom: 3px solid #ffff;
+      }
+    }
+    button {
+      place-self: flex-end;
+      margin: 20px 0;
+      border: none;
+      padding: 1em 2.25em;
+      border-radius: 8px;
+      text-transform: uppercase;
+      font-family: 'Jost', sans-serif;
+      font-size: 15px;
+      letter-spacing: .12rem;
+      transition: .2s;
+      cursor: pointer;
+      &:hover {
+        background-color: #FFAD9B;
+        color: #ffff;
+      }
+    }
+  }
+}

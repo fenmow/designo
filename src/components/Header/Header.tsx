@@ -13,7 +13,7 @@ export const Header: React.FC = () => {
       </div>
 
       <nav className={Style.nav_bar}>
-        <Link href="/company" legacyBehavior>
+        <Link href="/about" legacyBehavior>
           <a className={Style.nav_link}>our company</a>
         </Link>
         <Link href="/locations" legacyBehavior>

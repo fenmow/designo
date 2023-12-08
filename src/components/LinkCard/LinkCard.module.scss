@@ -10,6 +10,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 110px 0;
   &:before {
     position: absolute;
     content: "";
@@ -39,6 +40,7 @@
     text-decoration: none;
     z-index: 100;
     span {
+      padding: 0;
       padding-left: 7px !important;
       color: #F27D72;
     }
@@ -47,6 +49,7 @@
 
 @media only screen and (max-width: 1024px) {
   .link_card {
+    padding: 50px 0;
     .title {
       padding: 10px !important;
     }
