@@ -27,7 +27,32 @@
     display: flex;
     flex-direction: column;
     padding: 2.5rem 5rem 2.5rem 2.5rem;
+    .container {
+      position: relative;
+      span {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        visibility: hidden;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 10px;
+        font-size: 14px;
+        i {
+          font-size: 19px;
+        }
+      }
+    }
+
+    .show {
+      span {
+        visibility: visible;
+      }
+    }
+
     input, textarea {
+      position: relative;
       background-color: transparent;
       width: 100% !important;
       border: none;
@@ -46,6 +71,7 @@
         border-bottom: 3px solid #ffff;
       }
     }
+
     button {
       place-self: flex-end;
       margin: 20px 0;
@@ -62,6 +88,23 @@
         background-color: #FFAD9B;
         color: #ffff;
       }
+    }
+
+    .container.show span {
+      visibility: visible !important;
+    }
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .contact_card {
+    grid-template-columns: repeat(1, 1fr);
+    background-position: top left;
+    .text_content {
+      padding: 3em 5em .1em 2.5em;
+    }
+    .contact_form {
+      padding: 2rem 2.5rem 2.5rem 2.5rem;
     }
   }
 }
