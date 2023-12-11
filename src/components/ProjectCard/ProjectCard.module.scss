@@ -33,3 +33,21 @@
     }
   }
 }
+
+@media only screen and (max-width: 640px) {
+  .project_card {
+    .card_details {
+      h2 {
+        color: #E7816B;
+        text-transform: uppercase;
+        font-size: 20px;
+        letter-spacing: 3px;
+        font-weight: normal;
+      }
+      p {
+        margin: 12px 0;
+        font-size: 15px;
+      }
+    }
+  }
+}

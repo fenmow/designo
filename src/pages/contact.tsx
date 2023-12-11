@@ -5,24 +5,22 @@ import { Header } from "@/components/Header/Header";
 import ContactCard from "@/components/ContactCard/ContactCard";
 import LocationCards from "@/components/LocationCards/LocationCards";
 import Footer from "@/components/Footer/Footer";
-import Head from "next/head";
+import { useState } from "react";
 
 const Contact: NextPage = () => {
+  const [menuIsOpen, setMenuIsOpen] = useState<boolean>(false)
+  
   return (
     <>
-      <Head>
-        <script src="https://kit.fontawesome.com/3b8b94a692.js" crossOrigin="anonymous"></script>
-      </Head>
-      
-      <main className={Style.container}>
-        <Header />
+      <main className={`${Style.container} ${menuIsOpen === true ? `${Style.overlay}` : ``}`}>
+        <Header menuIsOpen={menuIsOpen} setMenuIsOpen={setMenuIsOpen} />
 
         <ContactCard />
 
         <LocationCards />
       </main>
 
-      <Footer />
+      { menuIsOpen === false ? (<Footer />) : null }
     </>
   )
 }

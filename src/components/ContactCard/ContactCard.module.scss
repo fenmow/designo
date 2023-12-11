@@ -1,6 +1,6 @@
 .contact_card {
   width: 100%;
-  margin: 1em 0;
+  margin: 1em 0 8em 0;
   background-color: #F27D72;
   color: #ffff;
   border-radius: .8em;
@@ -105,6 +105,46 @@
     }
     .contact_form {
       padding: 2rem 2.5rem 2.5rem 2.5rem;
+    }
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .contact_card {
+    border-radius: 0;
+    margin: 0 0 8em 0;
+    .text_content {
+      text-align: center;
+      padding: 3em 1.5em .1em 1.5em;
+      h1 {
+        font-size: 2.1em;
+      }
+      p {
+        font-size: 14px;
+      }
+    }
+
+    .contact_form {
+      padding: 2rem 1.5rem 2.5rem 1.5rem;
+      .container {
+        span {
+          font-size: 13px;
+          i {
+            font-size: 17px;
+          }
+        }
+      }
+      input, textarea {
+        padding: 14px;
+        margin: 4px 0;
+        color: #ffff;
+        resize: none;
+        font-size: 14px;
+      }
+
+      button {
+        place-self: center;
+      }
     }
   }
 }

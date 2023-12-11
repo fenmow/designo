@@ -4,19 +4,25 @@ import Style from "../styles/About.module.scss"
 import Image from "next/image";
 import ImageHero from "public/about-imgs/image-about-hero.jpg"
 import ImageHeroTablet from "public/about-imgs/image-about-hero-tablet.jpg"
+import ImageHeroMobile from "public/about-imgs/image-about-hero-mobile.jpg"
 import ImageWorldClassTalent from "public/about-imgs/image-world-class-talent.jpg"
 import ImageWorldClassTalentTablet from "public/about-imgs/image-world-class-talent-tablet.jpg"
+import ImageWorldClassTalentMobile from "public/about-imgs/image-world-class-talent-mobile.jpg"
 import ImageRealDeal from "public/about-imgs/image-real-deal.jpg"
 import ImageRealDealTablet from "public/about-imgs/image-real-deal-tablet.jpg"
+import ImageRealDealMobile from "public/about-imgs/image-real-deal-mobile.jpg"
 import BgImage from "public/bg-pattern-hero-home.svg"
 import LocationCards from "@/components/LocationCards/LocationCards";
 import Footer from "@/components/Footer/Footer";
+import { useState } from "react";
 
 const About: NextPage = () => {
+  const [menuIsOpen, setMenuIsOpen] = useState<boolean>(false)
+  
   return (
     <>
-      <main className={Style.container}>
-        <Header />
+      <main className={`${Style.container} ${menuIsOpen === true ? `${Style.overlay}` : ``}`}>
+        <Header menuIsOpen={menuIsOpen} setMenuIsOpen={setMenuIsOpen} />
 
         <section className={Style.main_about_card}>
           <div className={Style.text_content} style={{ backgroundImage: `url(${BgImage.src})` }}>
@@ -26,7 +32,8 @@ const About: NextPage = () => {
           
           <picture>
             <source media="(min-width: 1024px)" srcSet={ImageHero.src}/>
-            <Image className={Style.image_content} src={ImageHeroTablet.src} alt="About Us" height={400} width={440}></Image>
+            <source media="(min-width: 640px)" srcSet={ImageHeroTablet.src}/>
+            <Image className={Style.image_content} src={ImageHeroMobile.src} alt="About Us" height={400} width={440}></Image>
           </picture>
         </section>
 
@@ -34,7 +41,8 @@ const About: NextPage = () => {
         <section className={`${Style.main_about_card} ${Style.world_class_about_card}`}>
         <picture>
             <source media="(min-width: 1024px)" srcSet={ImageWorldClassTalent.src}/>
-            <Image className={`${Style.image_content} ${Style.image_content_world_class}`} src={ImageWorldClassTalentTablet.src} alt="About Us" height={400} width={440}></Image>
+            <source media="(min-width: 640px)" srcSet={ImageHeroTablet.src} />
+            <Image className={`${Style.image_content} ${Style.image_content_world_class}`} src={ImageWorldClassTalentMobile.src} alt="About Us" height={400} width={440}></Image>
           </picture>
           
           <div className={Style.text_content}>
@@ -55,12 +63,13 @@ const About: NextPage = () => {
 
           <picture>
             <source media="(min-width: 1024px)" srcSet={ImageRealDeal.src}/>
-            <Image className={`${Style.image_content}`} src={ImageRealDealTablet.src} alt="About Us" height={400} width={440}></Image>
+            <source media="(min-width: 640px)" srcSet={ImageRealDealTablet.src}/>
+            <Image className={`${Style.image_content}`} src={ImageRealDealMobile.src} alt="About Us" height={400} width={440}></Image>
           </picture>
         </section>
       </main>
 
-      <Footer />
+      { menuIsOpen === false ? (<Footer />) : null }
     </>
   )
 }

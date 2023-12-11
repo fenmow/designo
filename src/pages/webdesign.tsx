@@ -14,12 +14,15 @@ import LinkCard from "@/components/LinkCard/LinkCard";
 import AppDesignImage from "public/image-app-design.jpg"
 import GraphicDesignImage from "public/image-graphic-design.jpg"
 import Footer from "@/components/Footer/Footer";
+import { useState } from "react";
 
 const WebDesign: NextPage = () => {
+  const [menuIsOpen, setMenuIsOpen] = useState<boolean>(false)
+
   return (
     <>
-      <main className={Style.container}>
-        <Header />
+      <main className={`${Style.container} ${menuIsOpen === true ? `${Style.overlay}` : ``}`}>
+        <Header  menuIsOpen={menuIsOpen} setMenuIsOpen={setMenuIsOpen} />
         <TitleCard title="web design" text="We build websites that serve as powerful marketing tools and bring memorable brand experiences." />
 
         <ProjectsContainer>
@@ -68,7 +71,7 @@ const WebDesign: NextPage = () => {
           />
         </section>
       </main>
-      <Footer />
+      { menuIsOpen === false ? (<Footer />) : null }
     </>
   )
 }

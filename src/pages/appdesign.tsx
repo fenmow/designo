@@ -13,12 +13,15 @@ import Todo from "public/app-design-imgs/image-todo.jpg"
 import Loopstudios from "public/app-design-imgs/image-loopstudios.jpg"
 import WebDesignImage from "public/image-web-design-large.jpg" 
 import GraphicDesignImage from "public/image-graphic-design.jpg"
+import { useState } from "react";
 
 const AppDesign: NextPage = () => {
+  const [menuIsOpen, setMenuIsOpen] = useState<boolean>(false)
+
   return (
     <>
-      <main className={Style.container}>
-        <Header />
+      <main className={`${Style.container} ${menuIsOpen === true ? `${Style.overlay}` : ``}`}>
+        <Header menuIsOpen={menuIsOpen} setMenuIsOpen={setMenuIsOpen} />
         <TitleCard title="app design" text="Our mobile designs bring intuitive digital solutions to your customers right at ther fingertips." />
 
         <ProjectsContainer>
@@ -62,7 +65,7 @@ const AppDesign: NextPage = () => {
           />
         </section>
       </main>
-      <Footer />
+      { menuIsOpen === false ? (<Footer />) : null }
     </>
   )
 }

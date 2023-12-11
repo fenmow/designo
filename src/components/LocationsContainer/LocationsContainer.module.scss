@@ -65,3 +65,50 @@
     }
   }
 }
+
+@media only screen and (max-width: 640px) {
+  .locations_container {
+    gap: 0;
+    padding: 0 0 15px 0;
+    .location_details {
+      grid-column: 1;
+      background-color: #FDF3F0;
+      border-radius: 0;
+      padding: 4em 3em; 
+      text-align: center;
+      h1 {
+        margin-bottom: 10px;
+        font-size: 2em;
+      }
+      .main_info {
+        flex-direction: column;
+        gap: 1.2em;
+        margin-top: 15px;
+        .location_info, .contact_info {
+          display: flex;
+          flex-direction: column;
+          gap: .4em;
+          span {
+            font-size: 15px;
+          }
+          .info_title {
+            font-weight: bold;
+            text-transform: capitalize;
+          }
+        }
+      }
+    }
+
+    .location_image {
+      picture {
+        .image {
+          border-radius: 0;
+        }
+      }
+    }
+
+    .mobile_card_margin {
+      margin-bottom: 2.5em;
+    }
+  }
+}

@@ -11,3 +11,10 @@
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+@media only screen and (max-width: 640px) {
+  .projects_container {
+    grid-template-columns: repeat(1, 1fr);
+    padding: 7em 1.4em 0 1.4em;
+  }
+}

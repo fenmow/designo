@@ -55,3 +55,15 @@
     }
   }
 }
+
+@media only screen and (max-width: 640px) {
+  .link_card {
+    .title {
+      font-size: 1.7em;
+      padding: 5px !important;
+    }
+    .link {
+      font-size: 13px;
+    }
+  }
+}

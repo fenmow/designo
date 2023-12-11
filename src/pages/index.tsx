@@ -12,12 +12,15 @@ import Friendly from "/public/illustration-friendly.svg"
 import Image from "next/image";
 import BackgroundImage from "public/bg-pattern-hero-home.svg"
 import Footer from "@/components/Footer/Footer";
+import { useState } from "react";
 
 const Home: NextPage = () => {
+  const [menuIsOpen, setMenuIsOpen] = useState<boolean>(false)
+
   return (
     <>
-      <main className={Style.container}>
-      <Header />
+      <main className={`${Style.container} ${menuIsOpen === true ? `${Style.overlay}` : ``}`}>
+      <Header menuIsOpen={menuIsOpen} setMenuIsOpen={setMenuIsOpen} />
       <MainCard />
       <section className={Style.link_section}>
         <LinkCard cardTitle="web design" cardImage={WebDesignImage.src} cardLink="/webdesign" />
@@ -54,7 +57,7 @@ const Home: NextPage = () => {
         </div>
       </section>
       </main>
-      <Footer />
+      { menuIsOpen === false ? (<Footer />) : null }
     </>
   )
 }

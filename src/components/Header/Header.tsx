@@ -1,28 +1,49 @@
+/* eslint-disable @next/next/no-sync-scripts */
 import Image from "next/image"
 import Link from "next/link"
 import Logo from "public/logo-dark.png"
 import Style from "./Header.module.scss"
+import Head from "next/head"
+import { useState } from "react"
 
-export const Header: React.FC = () => {
+type HeaderProps = {
+  menuIsOpen: boolean
+  setMenuIsOpen: (menuIsOpen: boolean) => void
+}
+
+export const Header: React.FC<HeaderProps> = (props: {
+  menuIsOpen: boolean
+  setMenuIsOpen: (menuIsOpen: boolean) => void
+}) => {
+  
   return (
-    <header className={Style.header}>
-      <div className={Style.logo_container}>
-        <Link href='/'>
-          <Image alt="logo" src={Logo} height={23} width={170}></Image>
-        </Link>
-      </div>
+    <>
+    <Head>
+      <script src="https://kit.fontawesome.com/3b8b94a692.js" crossOrigin="anonymous"></script>
+    </Head>
 
-      <nav className={Style.nav_bar}>
-        <Link href="/about" legacyBehavior>
-          <a className={Style.nav_link}>our company</a>
-        </Link>
-        <Link href="/locations" legacyBehavior>
-          <a className={Style.nav_link}>locations</a>
-        </Link>
-        <Link href="/contact" legacyBehavior>
-          <a className={Style.nav_link}>contact</a>
-        </Link>
-      </nav>
-    </header>
+      <header className={`${Style.header}`}>
+        <div className={Style.logo_container}>
+          <Link href='/'>
+            <Image className={Style.logo_image} alt="logo" src={Logo} height={23} width={170}></Image>
+          </Link>
+        </div>
+
+        <nav className={`${Style.nav_bar} ${props.menuIsOpen === true ? `${Style.show}` : null}`}>
+          <Link href="/about" legacyBehavior>
+            <a className={Style.nav_link}>our company</a>
+          </Link>
+          <Link href="/locations" legacyBehavior>
+            <a className={Style.nav_link}>locations</a>
+          </Link>
+          <Link href="/contact" legacyBehavior>
+            <a className={Style.nav_link}>contact</a>
+          </Link>
+        </nav>
+
+        { props.menuIsOpen === false ? (<i className="fa-sharp fa-solid fa-bars" id={Style.icon} onClick={() => props.setMenuIsOpen(true)}></i>) 
+        : (<i className="fa-solid fa-x" id={Style.icon} onClick={() => props.setMenuIsOpen(false)}></i>) }
+      </header>
+    </>
   )
 }

@@ -85,3 +85,22 @@
     }
   }
 }
+
+@media only screen and (max-width: 640px) {
+  .main_card {
+    padding: 5rem 1rem;
+    padding-bottom: 24em;
+    border-radius: 0;
+    .info_Side {
+      h1 {
+        font-size: 1.95em;
+        font-weight: 400;
+        line-height: .99em;
+      }
+      p {
+        margin: 25px 0;
+        font-size: 14px;
+      }
+    }
+  }
+}

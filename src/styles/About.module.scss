@@ -107,3 +107,64 @@
     }
   }
 }
+
+@media only screen and (max-width: 640px) {
+  .container {
+    padding: 0;
+
+    .main_about_card {
+      border-radius: 0;
+      .text_content {
+        position: relative;
+        padding: 3rem 1rem;
+        color: #fff;
+        overflow: hidden;
+        background-repeat: no-repeat;
+        background-position: bottom left;
+        text-align: center;
+        border-radius: 0 ;
+        h1 {
+          font-size: 2rem;
+          text-transform: capitalize;
+          font-weight: normal;
+        }
+        p {
+          margin: 15px 0;
+          line-height: 1.75rem;
+          font-size: 14px;
+        }
+      }
+      picture {
+        display: flex;
+        .image_content {
+          border-radius: 0;
+          height: 100%;
+          width: 100%;
+        }
+      }
+    }
+
+    .world_class_about_card {
+      margin: 0 0 8em 0;
+    }
+
+    .real_deal_card {
+      margin: 8em 0 0 0;
+    }
+  }
+
+  .container.overlay {
+    height: 100vh;
+    overflow: hidden;
+    &::before {
+      position: absolute;
+      content: '';
+      width: 100%;
+      height: 80%;
+      top: 20%;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.608);
+      z-index: 500;
+    }
+  }
+}
