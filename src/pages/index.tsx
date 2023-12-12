@@ -14,6 +14,7 @@ import BackgroundImage from "public/bg-pattern-hero-home.svg"
 import Footer from "@/components/Footer/Footer";
 import { useState } from "react";
 import Head from "next/head";
+import dynamic from "next/dynamic";
 
 const Home: NextPage = () => {
   const [menuIsOpen, setMenuIsOpen] = useState<boolean>(false)

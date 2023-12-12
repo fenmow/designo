@@ -6,7 +6,20 @@ import UkMapImageTablet from "public/locations-imgs/image-map-uk-tablet.png"
 import AustraliaMapImage from "public/locations-imgs/image-map-australia.png"
 import AustraliaMapImageTablet from "public/locations-imgs/image-map-australia-tablet.png"
 import Image from "next/image"
+import dynamic from "next/dynamic"
 
+
+const MapCanada = dynamic(() => import('@/components/Map/MapCanada'), {
+  ssr: false
+})
+
+const MapAustralia = dynamic(() => import('@/components/Map/MapAustralia'), {
+  ssr: false
+})
+
+const MapUk = dynamic(() => import('@/components/Map/MapUk'), {
+  ssr: false
+})
 
 const LocationsContainer: React.FC = () => {
   return (
@@ -27,17 +40,11 @@ const LocationsContainer: React.FC = () => {
         </div>
       </div>
       <div className={`${Style.location_image} ${Style.canada_image_position}`}>
-        <picture>
-          <source media="(min-width: 1024px)" srcSet={CanadaMapImage.src}/>
-          <Image className={Style.image} src={CanadaMapImageTablet} alt="canada" height={280} width={280}></Image>
-        </picture>
+        <MapCanada />
       </div>
 
       <div className={Style.location_image}>
-        <picture>
-          <source media="(min-width: 1024px)" srcSet={AustraliaMapImage.src}/>
-          <Image className={Style.image} src={AustraliaMapImageTablet} alt="australia" height={280} width={280}></Image>
-        </picture>
+        <MapAustralia />
       </div>
       <div className={`${Style.location_details} ${Style.mobile_card_margin}`}>
         <h1>australia</h1>
@@ -71,10 +78,7 @@ const LocationsContainer: React.FC = () => {
         </div>
       </div>
       <div className={`${Style.location_image} ${Style.uk_image_position}`}>
-        <picture>
-          <source media="(min-width: 1024px)" srcSet={UkMapImage.src}/>
-          <Image className={Style.image} src={UkMapImageTablet} alt="canada" height={280} width={280}></Image>
-        </picture>
+        <MapUk />
       </div>
     </section>
   )
