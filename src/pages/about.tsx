@@ -46,7 +46,7 @@ const About: NextPage = () => {
         <section className={`${Style.main_about_card} ${Style.world_class_about_card}`}>
         <picture>
             <source media="(min-width: 1024px)" srcSet={ImageWorldClassTalent.src}/>
-            <source media="(min-width: 640px)" srcSet={ImageHeroTablet.src} />
+            <source media="(min-width: 640px)" srcSet={ImageWorldClassTalentTablet.src} />
             <Image className={`${Style.image_content} ${Style.image_content_world_class}`} src={ImageWorldClassTalentMobile.src} alt="About Us" height={400} width={440}></Image>
           </picture>
           
