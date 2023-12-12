@@ -14,12 +14,17 @@ import Loopstudios from "public/app-design-imgs/image-loopstudios.jpg"
 import WebDesignImage from "public/image-web-design-large.jpg" 
 import GraphicDesignImage from "public/image-graphic-design.jpg"
 import { useState } from "react";
+import Head from "next/head";
 
 const AppDesign: NextPage = () => {
   const [menuIsOpen, setMenuIsOpen] = useState<boolean>(false)
 
   return (
     <>
+      <Head>
+        <title>App Design</title>
+        <meta name="description" content="App Design" />
+      </Head>
       <main className={`${Style.container} ${menuIsOpen === true ? `${Style.overlay}` : ``}`}>
         <Header menuIsOpen={menuIsOpen} setMenuIsOpen={setMenuIsOpen} />
         <TitleCard title="app design" text="Our mobile designs bring intuitive digital solutions to your customers right at ther fingertips." />

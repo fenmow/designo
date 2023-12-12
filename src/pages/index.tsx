@@ -13,12 +13,17 @@ import Image from "next/image";
 import BackgroundImage from "public/bg-pattern-hero-home.svg"
 import Footer from "@/components/Footer/Footer";
 import { useState } from "react";
+import Head from "next/head";
 
 const Home: NextPage = () => {
   const [menuIsOpen, setMenuIsOpen] = useState<boolean>(false)
 
   return (
     <>
+      <Head>
+        <title>Home</title>
+        <meta name="description" content="Homepage" />
+      </Head>
       <main className={`${Style.container} ${menuIsOpen === true ? `${Style.overlay}` : ``}`}>
       <Header menuIsOpen={menuIsOpen} setMenuIsOpen={setMenuIsOpen} />
       <MainCard />

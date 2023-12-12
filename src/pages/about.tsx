@@ -15,12 +15,17 @@ import BgImage from "public/bg-pattern-hero-home.svg"
 import LocationCards from "@/components/LocationCards/LocationCards";
 import Footer from "@/components/Footer/Footer";
 import { useState } from "react";
+import Head from "next/head";
 
 const About: NextPage = () => {
   const [menuIsOpen, setMenuIsOpen] = useState<boolean>(false)
   
   return (
     <>
+    <Head>
+      <title>About Us</title>
+      <meta name="description" content="About Our Company" />
+    </Head>
       <main className={`${Style.container} ${menuIsOpen === true ? `${Style.overlay}` : ``}`}>
         <Header menuIsOpen={menuIsOpen} setMenuIsOpen={setMenuIsOpen} />
 

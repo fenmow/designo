@@ -15,12 +15,17 @@ import AppDesignImage from "public/image-app-design.jpg"
 import GraphicDesignImage from "public/image-graphic-design.jpg"
 import Footer from "@/components/Footer/Footer";
 import { useState } from "react";
+import Head from "next/head";
 
 const WebDesign: NextPage = () => {
   const [menuIsOpen, setMenuIsOpen] = useState<boolean>(false)
 
   return (
     <>
+      <Head>
+        <title>Web Design</title>
+        <meta name="description" content="Web Design" />
+      </Head>
       <main className={`${Style.container} ${menuIsOpen === true ? `${Style.overlay}` : ``}`}>
         <Header  menuIsOpen={menuIsOpen} setMenuIsOpen={setMenuIsOpen} />
         <TitleCard title="web design" text="We build websites that serve as powerful marketing tools and bring memorable brand experiences." />
