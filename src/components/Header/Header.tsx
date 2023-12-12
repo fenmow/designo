@@ -4,7 +4,7 @@ import Link from "next/link"
 import Logo from "public/logo-dark.png"
 import Style from "./Header.module.scss"
 import Head from "next/head"
-import { useState } from "react"
+import MenuIcon from "../menuIcon/MenuIcon"
 
 type HeaderProps = {
   menuIsOpen: boolean
@@ -41,7 +41,7 @@ export const Header: React.FC<HeaderProps> = (props: {
           </Link>
         </nav>
 
-        { props.menuIsOpen === false ? (<i className="fa-sharp fa-solid fa-bars" id={Style.icon} onClick={() => props.setMenuIsOpen(true)}></i>) 
+        { props.menuIsOpen === false ? ( <MenuIcon></MenuIcon> ) 
         : (<i className="fa-solid fa-x" id={Style.icon} onClick={() => props.setMenuIsOpen(false)}></i>) }
       </header>
     </>
