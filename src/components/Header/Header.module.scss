@@ -32,12 +32,6 @@
       }
     }
   }
-
-  #icon {
-    display: none;
-    font-size: 20px;
-    cursor: pointer;
-  }
 }
 
 @media only screen and (max-width: 640px) {
@@ -63,10 +57,6 @@
         color: #ffff;
         font-size: 18px;
       }
-    }
-
-    #icon {
-      display: flex;
     }
   }
 }

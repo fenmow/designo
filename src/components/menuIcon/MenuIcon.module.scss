@@ -1,0 +1,14 @@
+.icon {
+  display: none;
+}
+
+
+@media only screen and (max-width: 640px) {
+  .icon {
+    display: flex;
+    cursor: pointer;
+    width: 20px;
+    height: 22px;
+    font-size: 22px;
+  }
+}

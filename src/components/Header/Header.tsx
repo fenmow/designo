@@ -18,10 +18,6 @@ export const Header: React.FC<HeaderProps> = (props: {
   
   return (
     <>
-    <Head>
-      <script src="https://kit.fontawesome.com/3b8b94a692.js" crossOrigin="anonymous"></script>
-    </Head>
-
       <header className={`${Style.header}`}>
         <div className={Style.logo_container}>
           <Link href='/'>
@@ -41,8 +37,7 @@ export const Header: React.FC<HeaderProps> = (props: {
           </Link>
         </nav>
 
-        { props.menuIsOpen === false ? ( <MenuIcon></MenuIcon> ) 
-        : (<i className="fa-solid fa-x" id={Style.icon} onClick={() => props.setMenuIsOpen(false)}></i>) }
+        <MenuIcon menuIsOpen={props.menuIsOpen} setMenuIsOpen={props.setMenuIsOpen}></MenuIcon>
       </header>
     </>
   )

@@ -1,6 +1,7 @@
 import { useRef, useState } from "react"
 import Style from "./ContactCard.module.scss"
 import BgHero from "public/bg-pattern-hero-home.svg"
+import ExclamationIcon from "../ExclamationIcon/ExclamationIcon"
 
 const ContactCard: React.FC = () => {
   const [nameMessage, setNameMessage] = useState<boolean>(false)
@@ -38,15 +39,15 @@ const ContactCard: React.FC = () => {
       <form className={Style.contact_form} onSubmit={handleSubmit}>
         <div className={`${Style.container} ${nameMessage === true ? `${Style.show}` : ''}`}>
           <input ref={nameRef} type="text" name="name" id="name" className={Style.form_input} placeholder="Name"/>
-          <span>Can´t be empty <i className="fa-solid fa-circle-exclamation"></i></span>
+          <span>Can´t be empty <ExclamationIcon /></span>
         </div>
         <div className={`${Style.container} ${emailMessage === true ? `${Style.show}` : ''}`}>
           <input ref={emailRef} type="email" name="email" id="email" className={Style.form_input} placeholder="Email Address" />
-          <span>Can´t be empty <i className="fa-solid fa-circle-exclamation"></i></span>
+          <span>Can´t be empty <ExclamationIcon /></span>
         </div>
         <div className={`${Style.container} ${phoneMessage === true ? `${Style.show}` : ''}`}>
           <input ref={phoneRef} type="tel" name="tel" id="tel" className={Style.form_input} placeholder="Phone"/>
-          <span>Can´t be empty <i className="fa-solid fa-circle-exclamation"></i></span>
+          <span>Can´t be empty <ExclamationIcon /></span>
         </div>
         <textarea ref={messageRef} name="message" id="message" cols={40} rows={4} placeholder="Your Message"></textarea>
         <button type="submit">submit</button>
