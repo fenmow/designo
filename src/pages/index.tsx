@@ -22,7 +22,7 @@ const Home: NextPage = () => {
     <>
       <Head>
         <title>Home</title>
-        <meta name="description" content="Homepage" />
+        <meta name="description" content="Home page" />
       </Head>
       <main className={`${Style.container} ${menuIsOpen === true ? `${Style.overlay}` : ``}`}>
       <Header menuIsOpen={menuIsOpen} setMenuIsOpen={setMenuIsOpen} />
